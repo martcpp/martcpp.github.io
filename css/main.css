@@ -1,0 +1,103 @@
+body {
+	background-image: url("image.jpg");
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 150vh;
+    margin: 3%;
+	font-family: 'Secular One', sans-serif;
+	font-size: 23px;
+	color: #ffffff;
+}
+
+main {
+	padding: 5px;
+	display: block;
+	color: black;
+	font-family: 'Secular One', sans-serif;
+	width: 50%;
+	height: 50px;
+	min-height: 100vh;
+	background-color: grey;
+	margin: 1vh auto;
+	border-radius: 12px;
+	box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.section-con {
+	display: flex;
+	justify-content: center;
+    width: 80%;
+    
+}
+
+.table-con{
+	margin-top: 16px; 
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 150%;
+	border: none;
+	border-left: 3px solid #CC99CC;
+	border-right: 3px solid #CC99CC;
+	border-top: 3px solid #CC99CC;
+}
+
+.table-con-result{
+	margin-top: 16px; 
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 150%;
+	border: none;
+	border-left: 3px solid #CC99CC;
+	border-right: 3px solid #CC99CC;
+	border-bottom: 3px solid #CC99CC;
+}
+
+.table-con > thead, .table-con-result > thead {
+	text-align: center;
+	padding: 16px;
+}
+
+.code-input {
+	width: 80px;
+	padding: 5px;
+	border: 1px solid #CC99CC;
+	margin: 5px;
+}
+
+.result-input {
+	width: 120px;
+	padding: 5px;
+	border: 1px solid #CC99CC;
+	margin: 5px;
+}
+
+.select {
+	width: 80px;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #CC99CC;
+}
+
+button {
+	background-color: #660066;
+  	border: none;
+  	color: white;
+  	padding: 10px 30px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+	margin-left: 80px;
+	margin-right: -50px;
+	margin-top: 5px;
+	border-style: outset;
+	border-color: #CC99CC;
+}
+
+.footer {
+	color: #ffffff;
+	text-align: center;
+	font-family: 'Cursive', sans-serif;
+	font-size: 16px;
+    cursor: pointer;
+}
