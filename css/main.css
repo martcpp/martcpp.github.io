@@ -1,26 +1,36 @@
 body {
-	background-image: url("image.jpg");
+	background-color: blueviolet;
 	background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 150vh;
     margin: 3%;
 	font-family: 'Secular One', sans-serif;
-	font-size: 23px;
-	color: #ffffff;
+	font-size: 16px;
+	color: #d4caca;
 }
 
+.imgz {
+	
+	width:50px;
+	height:50px;
+	border: solid 1px #CCC;
+}
 main {
 	padding: 5px;
 	display: block;
 	color: black;
 	font-family: 'Secular One', sans-serif;
-	width: 50%;
+	width: auto;
 	height: 50px;
 	min-height: 100vh;
-	background-color: grey;
+	background-color: rgb(148, 145, 145);
 	margin: 1vh auto;
 	border-radius: 12px;
 	box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-ms-border-radius: 12px;
+	-o-border-radius: 12px;
 }
 
 .section-con {
@@ -75,11 +85,11 @@ main {
 	width: 80px;
 	padding: 5px;
 	margin: 5px;
-	border: 1px solid #CC99CC;
+	border: 1px solid #da0a26;
 }
 
 button {
-	background-color: #660066;
+	background-color: #cc265d;
   	border: none;
   	color: white;
   	padding: 10px 30px;
@@ -91,11 +101,11 @@ button {
 	margin-right: -50px;
 	margin-top: 5px;
 	border-style: outset;
-	border-color: #CC99CC;
+	border-color: #cc1a40;
 }
 
 .footer {
-	color: #ffffff;
+	color: #000000;
 	text-align: center;
 	font-family: 'Cursive', sans-serif;
 	font-size: 16px;
