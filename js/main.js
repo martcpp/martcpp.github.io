@@ -69,20 +69,7 @@ function addNewRow() {
     tableBody.appendChild(tr);
 }
 
-function addUpCreditsGpa() {
-    const creditUnit = document.querySelectorAll('[name = creditUnit]');
-    const grade = document.querySelectorAll('[name = grade]');
-    let totalUnit = document.querySelector("[name = totalUnit]").value = "";
-    let gpa = document.querySelector("[name = gpa]").value = "";
-    let option1 = "";
-    let option2 = "";
-    let a  = [];
-    for (let i = 0; i < creditUnit.length; ++i) {
-        option1 = creditUnit[i].options[creditUnit[i].selectedIndex].text;
-        let totalUnit = document.querySelector("[name = totalUnit]").value;
-        totalUnit = Number(totalUnit) + Number(option1);
-        a.push(totalUnit);
-    }
+
     let asum = a.reduce((partial_sum, a) => partial_sum + a,0); 
 
     let b = [];
