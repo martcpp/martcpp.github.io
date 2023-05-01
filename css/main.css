@@ -3,20 +3,16 @@ body {
     background-image: conic-gradient(rgba(85, 7, 7, 0.301), rgb(79, 7, 97), rgba(6, 26, 6, 0.075), rgb(125, 86, 197), rgb(54, 42, 42));
 	background-repeat: no-repeat;
     background-size: 100% 100%;
-    min-height: 150vh;
-    margin: 3%;
+  
 	font-family: 'Secular One', sans-serif;
 	font-size: 16px;
 	color: #0f0707;
-	padding: 25px;
+	
 }
 
-.select {
-	width: 80px;
-	padding: 5px;
-	margin: 5px;
-	border: 1px solid #CC99CC;
-}
+
+
+
 
 .imgz {
 	display: block;
