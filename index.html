@@ -1,233 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>marine engineering cgpa</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
 
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>uniben marine enginnering cgpa calculator</title>
 
-    <script src="js/main.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
 
-	<header>
-		<img class="imgz" src="unibenlogo.png" alt="logo">
-		<h1 style="text-align: center;"> MARINE GPA Calculator </h1>
-	</header>
+	<img class="imgz" src="unibenlogo.png" alt="logo">
 
-	<main>
-		<section class="section-con">
-			<form name="formBody" id="formdata1" method="post">
-				<table class="table-con">
-					<thead>
-						
-						<tr>
-							<td>Course</td>
-							<td>Unit</td>
-							<td>Grade</td>
-						</tr>
-					</thead>
-					<tbody id="tableBody">
-						<tr>
-							<h1 style="text-align: center;"> FIRST SEMESTER</h1>
-							
-							<td>
-								
-								<select name="Course" class="select" >
-									<option value="3">EMA281</option>
-									<option value="2">ECP281</option>
-									<option value="2">ELA201</option>
-									<option value="3">MEE221</option>
-									<option value="3">MEE211</option>
-									<option value="3">ENS211</option>
-								</select>
-							</td>
-							<td>
-								<input type="text" name="totalUnit" class="result-input">
-							</td>
-							<td>
-								<select name="grade" class="select">
-									<option value="5">A</option>
-									<option value="4">B</option>
-									<option value="3">C</option>
-									<option value="2">D</option>
-									<option value="1">E</option>
-									<option value="0">F</option>
-									
-								</select>
-							</td>
-							<td>
-								<button type="submit" class="select">remove</button>
-							</td>	
-						</tr>
+	<div class="container">
+		<h1 style="text-align: center;">MARINE enginnering CGPA calculator</h1> <br/>
 
-						
-						
-						
-					</tbody>
-
-					
-				</table>
-			</form>
-			
-			
-		</section>
-
-		<section class="section-con">
-			
-			<form id="formresult" name="results" method="post" onSubmit="return false">
-				<table class="table-con-result">
-					<thead>
-						<tr>
-							<td>Total Units</td>
-							<td>GPA</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<input type="text" name="totalUnit" class="result-input" onchange="addUpCreditsGpa()">
-							</td>
-							<td>
-								<input type="text" name="gpa" class="result-input" onchange="addUpCreditsGpa()">
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				
-			</form>
-		</section>
-
-
-		<section class="section-con">
-			<button form="formdata1" >add</button>
-			
-		</section>
-		<section class="section-con">
-			<form name="formBody" id="formdata2" method="post">
-				<table class="table-con">
-					<thead>
-						
-						<tr>
-							<td>Course</td>
-							<td>Unit</td>
-							<td>Grade</td>
-						</tr>
-					</thead>
-					<tbody id="tableBody">
-						<tr>
-							<h1 style="text-align: center;"> SECOND SEMESTER</h1>
-							
-							<td>
-								
-								<select name="Course" class="select" >
-									<option value="3">EMA281</option>
-									<option value="2">ECP281</option>
-									<option value="2">ELA201</option>
-									<option value="3">MEE221</option>
-									<option value="3">MEE211</option>
-									<option value="3">ENS211</option>
-								</select>
-							</td>
-							<td>
-								<input type="text" name="totalUnit" class="result-input">
-							</td>
-							<td>
-								<select name="grade" class="select">
-									<option value="5">A</option>
-									<option value="4">B</option>
-									<option value="3">C</option>
-									<option value="2">D</option>
-									<option value="1">E</option>
-									<option value="0">F</option>
-									
-								</select>
-							</td>
-							<td>
-							<button type="button" class="select">remove</button>
-						</td>
-						</tr>
-
-						
-						
-						
-					</tbody>
-
-					
-				</table>
-			</form>
-			
-			
-		</section>
-		<section class="section-con">
-			
-			<form id="formresult" name="results" method="post" onSubmit="return false">
-				<table class="table-con-result">
-					<thead>
-						<tr>
-							<td>Total Units</td>
-							<td>GPA</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<input type="text" name="totalUnit" class="result-input" onchange="addUpCreditsGpa()">
-							</td>
-							<td>
-								<input type="text" name="gpa" class="result-input" onchange="addUpCreditsGpa()">
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				
-			</form>
-		</section>
-
-
-
-		<section class="section-con">
-			<button form="formdata" ">Add</button>
-			
-		</section>
-
-		<section class="section-con">
-			
-			<form id="formresult" name="results" method="post" onSubmit="return false">
-				<table class="table-con-result">
-					<thead>
-						<tr>
-							<td>Total creditload</td>
-							<td>CGPA</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<input type="text" name="totalUnit" class="result-input" >
-							</td>
-							<td>
-								<input type="text" name="gpa" class="result-input" >
-							</td>
-							<td>
-								<input type="button" value="calulate">
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				
-			</form>
-		</section>
 		
-	</main>
+        <h1 style="text-align: center;">FIRST SEMESTER</h1>
 
-	<footer class="footer">
-		<p> &copy; 2023. Inspired by a marine engineering  <a href="https://github.com/martcpp">martcpp</a></p>
-	</footer>
+		<table class="_table">
+			
+		  <thead>
+			
+			<tr>
+			  <th>course</th>
+			  <th>creditload</th>
+			  <th>grade</th>
+			  <th width="50px">
+				<div class="action_container">
+				  <button class="success" onclick="create_tr('table_body')">
+					<i class="fa fa-plus"></i>
+				  </button>
+				</div>
+			  </th>
+			</tr>
+		  </thead>
+		  <tbody id="table_body">
+			<tr>
+			  <td>
+				<select class="form_control"  name="course" id="">
+					<option value="ema">ema</option>
+
+				</select>
+			  </td>
+			  <td>
+				<input name="credit" type="text" class="form_control" placeholder="3">
+			  </td>
+			  <td>
+				<select class="form_control"  name="grade" id="">
+					<option value="5">A</option>
+
+				</select>
+			  </td>
+			  <td>
+				<div class="action_container">
+				  <button class="danger" onclick="remove_tr(this)">
+					<i class="fa fa-close"></i>
+				  </button>
+				</div>
+			  </td>
+			</tr>
+		  </tbody>
+
+		  <thead>
+			
+			<tr>
+			  <th>total creditload</th>
+			  <th>GPA</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td>
+					<input class="form_control" name="totalcreditload" type="text">
+				</td>
+
+				<td>
+					<input class="form_control" name="GPA" type="text">
+				</td>
+			</tr>
+		  </tbody>
+		</table>
+
+
+
+
+		<h1 style="text-align: center;">SECOND SEMESTER</h1>
+
+		<table class="_table">
+			
+		  <thead>
+			
+			<tr>
+			  <th>course</th>
+			  <th>creditload</th>
+			  <th>grade</th>
+			  <th width="50px">
+				<div class="action_container">
+				  <button class="success" onclick="create_tr2('table_body2')">
+					<i class="fa fa-plus"></i>
+				  </button>
+				</div>
+			  </th>
+			</tr>
+		  </thead>
+		  <tbody id="table_body2">
+			<tr>
+			  <td>
+				<select class="form_control" name="course2" id="">
+					<option value="ema">ema</option>
+
+				</select>
+			  </td>
+			  <td>
+				<input name="credit2" type="text" class="form_control" placeholder="">
+			  </td>
+			  <td>
+				<select class="form_control" name="grade2" id="">
+					<option value="5">A</option>
+
+				</select>
+			  </td>
+			  <td>
+				<div class="action_container">
+				  <button class="danger" onclick="remove_tr2(this)">
+					<i class="fa fa-close"></i>
+				  </button>
+				</div>
+			  </td>
+			</tr>
+		  </tbody>
+		  <thead>
+			
+			<tr>
+			  <th>total creditload</th>
+			  <th>GPA</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td>
+					<input class="form_control" name="totalcreditload2" type="text">
+				</td>
+
+				<td>
+					<input class="form_control" name="GPA2" type="text">
+				</td>
+			</tr>
+		  </tbody>
+		</table>
+
+
+		<table class="_table">
+		<thead>
+			
+			<tr>
+			  <th>total creditload</th>
+			  <th>CGPA</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td>
+					<input class="form_control" name="totalcreditload3" type="text">
+				</td>
+
+				<td>
+					<input class="form_control" name="CGPA" type="text">
+				</td>
+			</tr>
+		  </tbody>
+
+        </table>
+
+	  </div>
+
+
+    <script src="js/main.js"></script>
 </body>
 </html>
