@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speech-to-Text</title>
+  <title>Nearby Hospitals</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,86 +15,65 @@
       margin: 0;
     }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    #hospital-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
     }
 
-    #output-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    #hospital-list li {
+      margin-bottom: 10px;
     }
 
-    #output {
-      font-size: 18px;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    #error {
+    #error-message {
       color: red;
-      font-size: 16px;
       margin-top: 10px;
-    }
-
-    #mic-icon {
-      width: 20px;
-      height: 20px;
     }
   </style>
 </head>
 <body>
-  <button onclick="startSpeechRecognition()">
-    <img id="mic-icon" src="https://cdn.materialdesignicons.com/5.4.45/svg/microphone-outline.svg" alt="Mic Icon">
-    Start Recording
-  </button>
-  <div id="output-container">
-    <p id="output"></p>
-    <p id="error"></p>
-  </div>
+  <h1>Nearby Hospitals</h1>
+  <ul id="hospital-list"></ul>
+  <p id="error-message"></p>
 
   <script>
-    function startSpeechRecognition() {
-      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-      const errorElement = document.getElementById('error');
-      const micIcon = document.getElementById('mic-icon');
-      
-      recognition.lang = 'en-US';
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+      document.getElementById('error-message').innerText = "Geolocation is not supported by this browser.";
+    }
 
-      recognition.onstart = function() {
-        console.log('Speech recognition started. Speak now.');
-        micIcon.style.filter = 'invert(43%) sepia(15%) saturate(1400%) hue-rotate(134deg) brightness(97%) contrast(96%)'; // Adjust CSS filter to indicate recording
-      };
+    function successCallback(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
 
-      recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        document.getElementById('output').innerText = 'You said: ' + transcript;
-        console.log('Recognition result: ', transcript);
-      };
+      // Use reverse geocoding to get the user's address or location name
+      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+        .then(response => response.json())
+        .then(data => {
+          const userLocation = data.display_name;
+          console.log("User Location:", userLocation);
 
-      recognition.onend = function() {
-        console.log('Speech recognition ended.');
-        micIcon.style.filter = 'none'; // Reset the CSS filter
-      };
+          // Now, you can use this location information to find hospitals or other places using another API or data source.
+          // Note: Without an API key, you might be limited in the services you can access, and the accuracy of results may vary.
+          
+          // For demonstration purposes, let's add some example hospitals to the list
+          const hospitals = ["Hospital A", "Hospital B", "Hospital C"];
 
-      recognition.onerror = function(event) {
-        const errorMessage = 'Speech recognition error: ' + event.error;
-        errorElement.innerText = errorMessage;
-        console.error(errorMessage);
-        micIcon.style.filter = 'none'; // Reset the CSS filter
-      };
+          const hospitalListElement = document.getElementById('hospital-list');
+          hospitals.forEach(hospital => {
+            const listItem = document.createElement('li');
+            listItem.innerText = hospital;
+            hospitalListElement.appendChild(listItem);
+          });
+        })
+        .catch(error => {
+          document.getElementById('error-message').innerText = "Error getting user location: " + error.message;
+        });
+    }
 
-      recognition.start();
+    function errorCallback(error) {
+      document.getElementById('error-message').innerText = "Error getting geolocation: " + error.message;
     }
   </script>
 </body>
