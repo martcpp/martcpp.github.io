@@ -18,6 +18,13 @@
       margin: 0;
     }
 
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
     textarea {
       width: 300px;
       height: 100px;
@@ -30,6 +37,10 @@
       cursor: pointer;
     }
 
+    #original-text {
+      margin-bottom: 10px;
+    }
+
     #translation-result {
       margin-top: 10px;
     }
@@ -37,16 +48,22 @@
 </head>
 <body>
   <h1>Language Translator</h1>
-  <textarea id="input-text" placeholder="Enter text to translate"></textarea>
-  <label for="target-language">Select Target Language:</label>
-  <select id="target-language">
-    <option value="es">Spanish</option>
-    <option value="fr">French</option>
-    <option value="de">German</option>
-    <!-- Add more language options as needed -->
-  </select>
-  <button onclick="translate()">Translate</button>
-  <div id="translation-result"></div>
+  <div class="flex-container">
+    <textarea id="input-text" placeholder="Enter text to translate"></textarea>
+    <label for="target-language">Select Target Language:</label>
+    <select id="target-language">
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <!-- Add more language options as needed -->
+    </select>
+    <button onclick="translate()">Translate</button>
+  </div>
+
+  <div class="flex-container">
+    <div id="original-text"></div>
+    <div id="translation-result"></div>
+  </div>
 
   <script>
     async function translate() {
@@ -55,9 +72,11 @@
 
       try {
         const translatedText = await translateText(inputText, targetLanguage);
+        document.getElementById('original-text').innerText = `Original Text: ${inputText}`;
         document.getElementById('translation-result').innerText = `Translated Text: ${translatedText}`;
       } catch (error) {
         console.error('Translation error:', error);
+        document.getElementById('original-text').innerText = '';
         document.getElementById('translation-result').innerText = 'Error translating text. Please try again.';
       }
     }
