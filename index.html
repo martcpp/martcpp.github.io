@@ -37,17 +37,25 @@
       text-align: center;
       margin-top: 10px;
     }
+
+    #error {
+      color: red;
+      font-size: 16px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
   <div id="output-container">
     <p id="output"></p>
+    <p id="error"></p>
   </div>
 
   <script>
     function startSpeechRecognition() {
       const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      const errorElement = document.getElementById('error');
       
       recognition.lang = 'en-US';
 
@@ -66,7 +74,9 @@
       };
 
       recognition.onerror = function(event) {
-        console.error('Speech recognition error: ', event.error);
+        const errorMessage = 'Speech recognition error: ' + event.error;
+        errorElement.innerText = errorMessage;
+        console.error(errorMessage);
       };
 
       recognition.start();
