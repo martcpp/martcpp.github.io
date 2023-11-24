@@ -24,6 +24,9 @@
       border: none;
       border-radius: 5px;
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     #output-container {
@@ -43,10 +46,18 @@
       font-size: 16px;
       margin-top: 10px;
     }
+
+    #mic-icon {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
-  <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
+  <button onclick="startSpeechRecognition()">
+    <img id="mic-icon" src="https://cdn.materialdesignicons.com/5.4.45/svg/microphone-outline.svg" alt="Mic Icon">
+    Start Recording
+  </button>
   <div id="output-container">
     <p id="output"></p>
     <p id="error"></p>
@@ -56,11 +67,13 @@
     function startSpeechRecognition() {
       const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
       const errorElement = document.getElementById('error');
+      const micIcon = document.getElementById('mic-icon');
       
       recognition.lang = 'en-US';
 
       recognition.onstart = function() {
         console.log('Speech recognition started. Speak now.');
+        micIcon.style.filter = 'invert(43%) sepia(15%) saturate(1400%) hue-rotate(134deg) brightness(97%) contrast(96%)'; // Adjust CSS filter to indicate recording
       };
 
       recognition.onresult = function(event) {
@@ -71,12 +84,14 @@
 
       recognition.onend = function() {
         console.log('Speech recognition ended.');
+        micIcon.style.filter = 'none'; // Reset the CSS filter
       };
 
       recognition.onerror = function(event) {
         const errorMessage = 'Speech recognition error: ' + event.error;
         errorElement.innerText = errorMessage;
         console.error(errorMessage);
+        micIcon.style.filter = 'none'; // Reset the CSS filter
       };
 
       recognition.start();
