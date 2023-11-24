@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nearby Hospitals</title>
+  <title>Language Translator</title>
+  <script src="path/to/translate.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,69 +16,48 @@
       margin: 0;
     }
 
-    #hospital-list {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
-
-    #hospital-list li {
+    textarea {
+      width: 300px;
+      height: 100px;
       margin-bottom: 10px;
     }
 
-    #error-message {
-      color: red;
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #translation-result {
       margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Nearby Hospitals</h1>
-  <ul id="hospital-list"></ul>
-  <p id="error-message"></p>
+  <h1>Language Translator</h1>
+  <textarea id="input-text" placeholder="Enter text to translate"></textarea>
+  <button onclick="translate()">Translate</button>
+  <div id="translation-result"></div>
 
   <script>
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    } else {
-      document.getElementById('error-message').innerText = "Geolocation is not supported by this browser.";
+    async function translate() {
+      const inputText = document.getElementById('input-text').value;
+      const targetLanguage = 'es'; // Change this to the desired target language code
+
+      try {
+        const translatedText = await translateText(inputText, targetLanguage);
+        document.getElementById('translation-result').innerText = `Translated Text: ${translatedText}`;
+      } catch (error) {
+        console.error('Translation error:', error);
+        document.getElementById('translation-result').innerText = 'Error translating text. Please try again.';
+      }
     }
 
-    function successCallback(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      // Use reverse geocoding to get the user's address or location name
-      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
-        .then(response => response.json())
-        .then(data => {
-          const userLocation = data.display_name;
-          console.log("User Location:", userLocation);
-
-          // Fetch nearby hospitals using Overpass API
-          fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node(around:5000,${latitude},${longitude})[amenity=hospital];out;`)
-            .then(response => response.json())
-            .then(data => {
-              const hospitals = data.elements.map(element => element.tags.name).filter(Boolean);
-
-              const hospitalListElement = document.getElementById('hospital-list');
-              hospitals.forEach(hospital => {
-                const listItem = document.createElement('li');
-                listItem.innerText = hospital;
-                hospitalListElement.appendChild(listItem);
-              });
-            })
-            .catch(error => {
-              document.getElementById('error-message').innerText = "Error getting nearby hospitals: " + error.message;
-            });
-        })
-        .catch(error => {
-          document.getElementById('error-message').innerText = "Error getting user location: " + error.message;
-        });
-    }
-
-    function errorCallback(error) {
-      document.getElementById('error-message').innerText = "Error getting geolocation: " + error.message;
+    async function translateText(text, targetLanguage) {
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${encodeURIComponent(text)}`;
+      const response = await fetch(url);
+      const result = await response.json();
+      return result[0][0][0];
     }
   </script>
 </body>
