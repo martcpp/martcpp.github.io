@@ -54,18 +54,22 @@
           const userLocation = data.display_name;
           console.log("User Location:", userLocation);
 
-          // Now, you can use this location information to find hospitals or other places using another API or data source.
-          // Note: Without an API key, you might be limited in the services you can access, and the accuracy of results may vary.
-          
-          // For demonstration purposes, let's add some example hospitals to the list
-          const hospitals = ["Hospital A", "Hospital B", "Hospital C"];
+          // Fetch nearby hospitals using Overpass API
+          fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node(around:5000,${latitude},${longitude})[amenity=hospital];out;`)
+            .then(response => response.json())
+            .then(data => {
+              const hospitals = data.elements.map(element => element.tags.name).filter(Boolean);
 
-          const hospitalListElement = document.getElementById('hospital-list');
-          hospitals.forEach(hospital => {
-            const listItem = document.createElement('li');
-            listItem.innerText = hospital;
-            hospitalListElement.appendChild(listItem);
-          });
+              const hospitalListElement = document.getElementById('hospital-list');
+              hospitals.forEach(hospital => {
+                const listItem = document.createElement('li');
+                listItem.innerText = hospital;
+                hospitalListElement.appendChild(listItem);
+              });
+            })
+            .catch(error => {
+              document.getElementById('error-message').innerText = "Error getting nearby hospitals: " + error.message;
+            });
         })
         .catch(error => {
           document.getElementById('error-message').innerText = "Error getting user location: " + error.message;
