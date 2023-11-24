@@ -26,15 +26,24 @@
       margin-bottom: 20px;
     }
 
+    #output-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     #output {
       font-size: 18px;
       text-align: center;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
-  <p id="output"></p>
+  <div id="output-container">
+    <p id="output"></p>
+  </div>
 
   <script>
     function startSpeechRecognition() {
