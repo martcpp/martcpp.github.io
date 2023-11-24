@@ -38,13 +38,20 @@
 <body>
   <h1>Language Translator</h1>
   <textarea id="input-text" placeholder="Enter text to translate"></textarea>
+  <label for="target-language">Select Target Language:</label>
+  <select id="target-language">
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+    <option value="de">German</option>
+    <!-- Add more language options as needed -->
+  </select>
   <button onclick="translate()">Translate</button>
   <div id="translation-result"></div>
 
   <script>
     async function translate() {
       const inputText = document.getElementById('input-text').value;
-      const targetLanguage = 'es'; // Change this to the desired target language code
+      const targetLanguage = document.getElementById('target-language').value;
 
       try {
         const translatedText = await translateText(inputText, targetLanguage);
