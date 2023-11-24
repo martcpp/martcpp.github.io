@@ -1,185 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
-
-    <title>uniben marine enginnering cgpa calculator</title>
-
-    <link rel="stylesheet" href="css/main.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech-to-Text</title>
 </head>
 <body>
+  <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
+  <p id="output"></p>
 
-	<img class="imgz" src="unibenlogo.png" alt="logo">
+  <script>
+    function startSpeechRecognition() {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      
+      recognition.lang = 'en-US';
 
-	<div class="container">
-		<h1 style="text-align: center;">MARINE enginnering CGPA calculator</h1> <br/>
+      recognition.onstart = function() {
+        console.log('Speech recognition started. Speak now.');
+      };
 
-		
-        <h1 style="text-align: center;">FIRST SEMESTER</h1>
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('output').innerText = 'You said: ' + transcript;
+        console.log('Recognition result: ', transcript);
+      };
 
-		<table class="_table">
-			
-		  <thead>
-			
-			<tr>
-			  <th>course</th>
-			  <th>creditload</th>
-			  <th>grade</th>
-			  <th width="50px">
-				<div class="action_container">
-				  <button class="success" onclick="create_tr('table_body')">
-					<i class="fa fa-plus"></i>
-				  </button>
-				</div>
-			  </th>
-			</tr>
-		  </thead>
-		  <tbody id="table_body">
-			<tr>
-			  <td>
-				<select class="form_control"  name="course" id="">
-					<option value="ema">ema</option>
+      recognition.onend = function() {
+        console.log('Speech recognition ended.');
+      };
 
-				</select>
-			  </td>
-			  <td>
-				<input name="credit" type="text" class="form_control" placeholder="3">
-			  </td>
-			  <td>
-				<select class="form_control"  name="grade" id="">
-					<option value="5">A</option>
+      recognition.onerror = function(event) {
+        console.error('Speech recognition error: ', event.error);
+      };
 
-				</select>
-			  </td>
-			  <td>
-				<div class="action_container">
-				  <button class="danger" onclick="remove_tr(this)">
-					<i class="fa fa-close"></i>
-				  </button>
-				</div>
-			  </td>
-			</tr>
-		  </tbody>
-
-		  <thead>
-			
-			<tr>
-			  <th>total creditload</th>
-			  <th>GPA</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-				<td>
-					<input class="form_control" name="totalcreditload" type="text">
-				</td>
-
-				<td>
-					<input class="form_control" name="GPA" type="text">
-				</td>
-			</tr>
-		  </tbody>
-		</table>
-
-
-
-
-		<h1 style="text-align: center;">SECOND SEMESTER</h1>
-
-		<table class="_table">
-			
-		  <thead>
-			
-			<tr>
-			  <th>course</th>
-			  <th>creditload</th>
-			  <th>grade</th>
-			  <th width="50px">
-				<div class="action_container">
-				  <button class="success" onclick="create_tr2('table_body2')">
-					<i class="fa fa-plus"></i>
-				  </button>
-				</div>
-			  </th>
-			</tr>
-		  </thead>
-		  <tbody id="table_body2">
-			<tr>
-			  <td>
-				<select class="form_control" name="course2" id="">
-					<option value="ema">ema</option>
-
-				</select>
-			  </td>
-			  <td>
-				<input name="credit2" type="text" class="form_control" placeholder="">
-			  </td>
-			  <td>
-				<select class="form_control" name="grade2" id="">
-					<option value="5">A</option>
-
-				</select>
-			  </td>
-			  <td>
-				<div class="action_container">
-				  <button class="danger" onclick="remove_tr2(this)">
-					<i class="fa fa-close"></i>
-				  </button>
-				</div>
-			  </td>
-			</tr>
-		  </tbody>
-		  <thead>
-			
-			<tr>
-			  <th>total creditload</th>
-			  <th>GPA</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-				<td>
-					<input class="form_control" name="totalcreditload2" type="text">
-				</td>
-
-				<td>
-					<input class="form_control" name="GPA2" type="text">
-				</td>
-			</tr>
-		  </tbody>
-		</table>
-
-
-		<table class="_table">
-		<thead>
-			
-			<tr>
-			  <th>total creditload</th>
-			  <th>CGPA</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-				<td>
-					<input class="form_control" name="totalcreditload3" type="text">
-				</td>
-
-				<td>
-					<input class="form_control" name="CGPA" type="text">
-				</td>
-			</tr>
-		  </tbody>
-
-        </table>
-
-	  </div>
-
-
-    <script src="js/main.js"></script>
+      recognition.start();
+    }
+  </script>
 </body>
 </html>
