@@ -84,7 +84,7 @@
             .then(response => response.json())
             .then(responseData => {
                 // Extract the "response" property from the JSON
-                var resultText = responseData;
+                var resultText = responseData.response;
 
                 // Update the output div with the processed data
                 document.getElementById("output").innerText = resultText;
