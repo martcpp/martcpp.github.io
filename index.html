@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Language Translator</title>
-  <script src="https://cdn.jsdelivr.net/npm/google-translate-token@1.1.0/dist/index.min.js"></script>
-  <!-- or use the specific version you need -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/google-translate-token@{version}/dist/index.min.js"></script> -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-    .flex-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    textarea {
-      width: 300px;
-      height: 100px;
-      margin-bottom: 10px;
-    }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
 
-    #original-text {
-      margin-bottom: 10px;
-    }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    #translation-result {
-      margin-top: 10px;
-    }
-  </style>
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <h1>Language Translator</h1>
-  <div class="flex-container">
-    <textarea id="input-text" placeholder="Enter text to translate"></textarea>
-    <label for="target-language">Select Target Language:</label>
-    <select id="target-language">
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="de">German</option>
-      <!-- Add more language options as needed -->
-    </select>
-    <button onclick="translate()">Translate</button>
-  </div>
+    <form id="myForm">
+        <label for="userInput">User Input:</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
 
-  <div class="flex-container">
-    <div id="original-text"></div>
-    <div id="translation-result"></div>
-  </div>
+    <div id="output"></div>
 
-  <script>
-    async function translate() {
-      const inputText = document.getElementById('input-text').value;
-      const targetLanguage = document.getElementById('target-language').value;
+    <script>
+        function submitForm() {
+            var userInput = document.getElementById("userInput").value;
+            var data = { "user_input": userInput };
 
-      try {
-        const translatedText = await translateText(inputText, targetLanguage);
-        document.getElementById('original-text').innerText = `Original Text: ${inputText}`;
-        document.getElementById('translation-result').innerText = `Translated Text: ${translatedText}`;
-      } catch (error) {
-        console.error('Translation error:', error);
-        document.getElementById('original-text').innerText = '';
-        document.getElementById('translation-result').innerText = 'Error translating text. Please try again.';
-      }
-    }
-
-    async function translateText(text, targetLanguage) {
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${encodeURIComponent(text)}`;
-      const response = await fetch(url);
-      const result = await response.json();
-      return result[0][0][0];
-    }
-  </script>
+            fetch("https://biblebot.pythonanywhere.com/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(responseData => {
+                // Update the output div with the processed data
+                document.getElementById("output").innerText = "Response: " + JSON.stringify(responseData);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
 </body>
 </html>
