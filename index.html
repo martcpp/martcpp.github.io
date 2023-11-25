@@ -17,11 +17,12 @@
             height: 100vh;
         }
 
-        form {
+        #container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         label {
@@ -52,17 +53,21 @@
         #output {
             margin-top: 20px;
             font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <form id="myForm">
-        <label for="userInput">User Input:</label>
-        <input type="text" id="userInput" name="userInput" required>
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
+    <div id="container">
+        <h1>API Request Example</h1>
+        <form id="myForm">
+            <label for="userInput">User Input:</label>
+            <input type="text" id="userInput" name="userInput" required>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
 
-    <div id="output"></div>
+        <div id="output"></div>
+    </div>
 
     <script>
         function submitForm() {
