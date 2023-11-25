@@ -81,10 +81,13 @@
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.text())  // Change to response.text()
+            .then(response => response.json())
             .then(responseData => {
+                // Extract the "response" property from the JSON
+                var resultText = responseData.response;
+
                 // Update the output div with the processed data
-                document.getElementById("output").innerText = "Response: " + responseData;
+                document.getElementById("output").innerText = "Response: " + resultText;
             })
             .catch(error => {
                 console.error("Error:", error);
