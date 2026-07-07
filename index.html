@@ -165,59 +165,128 @@
         </aside>
       </div>
 
-      <!-- Ferris (Rust) vs Python snake, a friendly rivalry -->
+      <!-- Blue crab (Rust) vs Burmese python (Python), a friendly rivalry -->
       <div class="duel" aria-hidden="true" title="Rust vs Python — a friendly rivalry">
         <svg viewBox="0 0 520 150" role="img">
-          <line class="ground" x1="20" y1="128" x2="500" y2="128"/>
+          <defs>
+            <pattern id="giraffe" width="30" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(6)">
+              <rect width="30" height="26" fill="#E7D6AC"/>
+              <path d="M6 5 Q15 1 24 5 Q29 13 24 21 Q15 25 6 21 Q1 13 6 5 Z" fill="#57401E" stroke="#31230F" stroke-width="1.5"/>
+              <path d="M13 9 Q19 13 13 18 Q9 13 13 9 Z" fill="#6E5026" opacity="0.75"/>
+            </pattern>
+            <linearGradient id="crabShell" x1="0.3" y1="0" x2="0.62" y2="1">
+              <stop offset="0" stop-color="#98A66F"/><stop offset="0.55" stop-color="#66744A"/><stop offset="1" stop-color="#43502D"/>
+            </linearGradient>
+            <linearGradient id="crabClaw" x1="1" y1="0.2" x2="0" y2="0.1">
+              <stop offset="0" stop-color="#7C93A2"/><stop offset="0.4" stop-color="#8AA06A"/><stop offset="0.72" stop-color="#E8702E"/><stop offset="1" stop-color="#C23D13"/>
+            </linearGradient>
+            <clipPath id="coilClip"><path d="M56 124 C 44 110 46 82 80 76 C 116 70 140 90 138 108 C 137 123 114 130 94 128 C 76 126 62 128 56 124 Z"/></clipPath>
+          </defs>
 
-          <!-- Python snake (left, facing right) -->
+          <line class="ground" x1="20" y1="128" x2="500" y2="128"/>
+          <ellipse class="d-shadow" cx="96" cy="130" rx="58" ry="6"/>
+          <ellipse class="d-shadow" cx="416" cy="130" rx="72" ry="7"/>
+
+          <!-- Burmese python (left, facing right) -->
           <g class="fx-snake">
-            <g class="fx-snake-body">
-              <path class="d-snake-2" d="M60 126c0-20 16-30 34-30 20 0 30 12 30 24 0 10-8 16-16 16H70c14 0 18-6 18-14 0-8-6-12-14-12-10 0-16 8-16 20z"/>
-              <path class="d-snake" d="M58 124c0-20 16-32 36-32 22 0 32 13 32 26 0 11-8 17-17 17H68c14 0 19-6 19-15 0-8-6-13-15-13-11 0-17 9-17 22z"/>
+            <!-- coil body with reticulated pattern -->
+            <g clip-path="url(#coilClip)">
+              <rect x="40" y="58" width="120" height="78" fill="url(#giraffe)"/>
+              <path d="M50 128 C 80 132 120 128 140 110 L142 136 L48 136 Z" fill="#000" opacity="0.18"/>
+              <path d="M60 82 C 90 72 122 78 134 94" fill="none" stroke="#fff" stroke-width="8" stroke-opacity="0.12" stroke-linecap="round"/>
             </g>
-            <!-- head -->
+            <path d="M56 124 C 44 110 46 82 80 76 C 116 70 140 90 138 108 C 137 123 114 130 94 128 C 76 126 62 128 56 124 Z" fill="none" stroke="#31230F" stroke-width="1.6" opacity="0.55"/>
+            <!-- loop separation grooves -->
+            <path d="M62 116 C 84 128 114 122 124 104" fill="none" stroke="#31230F" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+            <path d="M70 94 C 94 86 118 92 128 104" fill="none" stroke="#31230F" stroke-width="2" opacity="0.30" stroke-linecap="round"/>
+
+            <!-- head + neck -->
             <g class="fx-head">
-              <path class="d-snake" d="M120 96c14-2 30 4 34 16 3 9-2 18-12 20-13 3-26-4-28-16-1-9 3-18 6-20z"/>
-              <ellipse class="d-eye" cx="146" cy="104" rx="5.5" ry="6"/>
-              <circle class="d-pupil" cx="147.5" cy="104" r="2.6"/>
-              <path class="fx-tongue d-tongue" d="M160 116l16 2-6 3 7 2-17 1z"/>
+              <path d="M124 112 C 136 100 140 94 150 90 C 156 87 164 88 168 94 L160 108 C 150 112 134 116 124 112 Z" fill="url(#giraffe)" stroke="#31230F" stroke-width="1" stroke-opacity="0.5"/>
+              <path d="M150 90 C 158 78 182 76 195 86 C 205 94 203 108 191 114 C 176 121 156 116 150 106 C 147 100 147 95 150 90 Z" fill="#D9CDA9" stroke="#31230F" stroke-width="1" stroke-opacity="0.5"/>
+              <!-- crown spear marking -->
+              <path d="M153 92 C 165 83 183 84 193 91 L189 97 C 179 91 165 91 157 98 Z" fill="#4A371C" opacity="0.85"/>
+              <!-- subocular dark stripe -->
+              <path d="M170 100 L194 95 L196 101 L175 109 Z" fill="#3A2A15" opacity="0.72"/>
+              <!-- eye (amber, vertical pupil) -->
+              <ellipse cx="176" cy="95" rx="5.6" ry="6" fill="#B9922F"/>
+              <ellipse cx="176" cy="95" rx="1.9" ry="5" fill="#14100A"/>
+              <circle cx="174" cy="93" r="1.3" class="d-hi"/>
+              <!-- nostril + mouth -->
+              <circle cx="193" cy="91" r="1.3" fill="#31230F"/>
+              <path d="M160 112 C 174 116 188 112 194 105" fill="none" stroke="#31230F" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+              <!-- forked tongue -->
+              <path class="fx-tongue" fill="#8a1f2a" d="M196 104 l20 -1 -7 -4 9 4 -9 4 7 -4 -20 -1 z"/>
             </g>
           </g>
 
           <!-- clash spark (center) -->
           <g class="fx-clash" fill="none" stroke-width="2.4" stroke-linecap="round">
-            <path d="M260 78l0-16M260 108l0-16M244 85l-12-6M288 79l-12 6M244 100l-12 6M288 106l-12-6"/>
-            <circle cx="260" cy="92" r="4" fill="var(--rust)" stroke="none"/>
+            <path d="M260 74l0-16M260 104l0-16M244 81l-12-6M288 75l-12 6M244 96l-12 6M288 102l-12-6"/>
+            <circle cx="260" cy="88" r="4" fill="var(--rust)" stroke="none"/>
           </g>
 
-          <!-- Ferris the crab (right, facing left) -->
+          <!-- Blue crab (right, facing left, claws raised) -->
           <g class="fx-ferris">
             <g class="fx-ferris-bob">
-              <!-- legs -->
-              <g stroke-linecap="round">
-                <path d="M392 120l-16 8M404 124l-10 10M436 124l10 10M448 120l16 8" stroke="var(--rust-dark)" stroke-width="4" fill="none"/>
+              <!-- walking legs + swim paddle (splayed right) -->
+              <g fill="none" stroke="#6E7B4C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M458 86 l24 -12 14 0"/>
+                <path d="M462 96 l26 -4 14 6"/>
+                <path d="M460 106 l24 6 12 12"/>
               </g>
-              <!-- shell -->
-              <ellipse class="d-crab" cx="420" cy="104" rx="52" ry="30"/>
-              <ellipse class="d-crab-2" cx="420" cy="112" rx="40" ry="16"/>
-              <!-- eye stalks -->
-              <path d="M406 78v-18M434 78v-18" stroke="var(--rust)" stroke-width="5" fill="none" stroke-linecap="round"/>
-              <circle class="d-eye" cx="406" cy="56" r="8"/><circle class="d-pupil" cx="404" cy="56" r="3.6"/>
-              <circle class="d-eye" cx="434" cy="56" r="8"/><circle class="d-pupil" cx="432" cy="56" r="3.6"/>
-              <!-- claws (toward center / left) -->
+              <g fill="#E07B34">
+                <path d="M494 74 l8 -3 -1 7 z"/><path d="M500 98 l8 1 -4 6 z"/><path d="M494 124 l7 4 -6 4 z"/>
+              </g>
+              <!-- back swimmer paddle -->
+              <path d="M454 114 C 470 118 486 126 492 140 C 482 142 470 138 462 128 C 457 122 454 118 454 114 Z" fill="#6E7B4C"/>
+              <path d="M454 114 C 470 118 486 126 492 140" fill="none" stroke="#E07B34" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- lateral spines -->
+              <path d="M373 90 L342 96 L375 102 Z" fill="#43502D"/>
+              <path d="M341 96 l-6 0 7 -3 z" fill="#C75020"/>
+              <path d="M459 90 L490 96 L457 102 Z" fill="#43502D"/>
+              <path d="M489 96 l6 0 -7 -3 z" fill="#C75020"/>
+
+              <!-- carapace (fan) -->
+              <path d="M372 94 C 374 76 394 70 416 70 C 438 70 458 76 460 94 C 462 110 442 122 416 122 C 390 122 370 110 372 94 Z" fill="url(#crabShell)"/>
+              <!-- marginal front teeth -->
+              <g fill="#54613A">
+                <path d="M388 74 l-5 -6 7 2 z"/><path d="M400 71 l-4 -6 7 2 z"/><path d="M432 71 l4 -6 -7 2 z"/><path d="M444 74 l5 -6 -7 2 z"/>
+              </g>
+              <!-- mottled spots + speckle -->
+              <g fill="#C4CDA2" opacity="0.5"><ellipse cx="400" cy="92" rx="7" ry="4"/><ellipse cx="432" cy="90" rx="8" ry="4"/><ellipse cx="416" cy="104" rx="9" ry="4"/><ellipse cx="392" cy="106" rx="5" ry="3"/><ellipse cx="440" cy="106" rx="5" ry="3"/></g>
+              <g fill="#2f3a1c" opacity="0.35"><circle cx="410" cy="86" r="1.4"/><circle cx="424" cy="88" r="1.4"/><circle cx="406" cy="100" r="1.4"/><circle cx="428" cy="100" r="1.4"/><circle cx="416" cy="94" r="1.4"/></g>
+              <!-- carapace grooves + highlight -->
+              <path d="M392 96 C 404 104 428 104 440 96" fill="none" stroke="#43502D" stroke-width="1.8" opacity="0.5" stroke-linecap="round"/>
+              <ellipse class="d-hi" cx="400" cy="84" rx="15" ry="6" opacity="0.25" transform="rotate(-16 400 84)"/>
+
+              <!-- central frontal prongs + eyes -->
+              <path d="M410 72 l-2 -12 5 8 z" fill="#54613A"/>
+              <path d="M424 72 l2 -12 -5 8 z" fill="#54613A"/>
+              <path d="M411 76 v-7 M425 76 v-7" stroke="#43502D" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="411" cy="67" r="3.4" fill="#1b2313"/><circle cx="410" cy="66" r="1" class="d-hi"/>
+              <circle cx="425" cy="67" r="3.4" fill="#1b2313"/><circle cx="424" cy="66" r="1" class="d-hi"/>
+
+              <!-- UPPER claw (raised toward snake) -->
               <g class="fx-claw-top">
-                <path class="d-crab" d="M372 92c-18-6-38-2-48 8 8 4 18 5 26 2-6 6-8 14-4 20 8-2 16-10 18-20 4 2 8 2 12 0z"/>
-                <path class="d-crab-2" d="M330 98c-6 3-9 9-8 15 6-1 12-6 14-12z"/>
+                <path d="M377 88 C 362 78 352 68 348 56" fill="none" stroke="url(#crabClaw)" stroke-width="11" stroke-linecap="round"/>
+                <path d="M348 58 C 340 46 340 38 346 32 C 350 42 352 48 356 50 C 351 42 353 34 359 32 C 364 40 364 54 357 60 C 353 63 350 63 348 58 Z" fill="url(#crabClaw)"/>
+                <path d="M347 33 l-4 -5 6 1 z" fill="#C23D13"/><path d="M360 33 l4 -5 -6 1 z" fill="#C23D13"/>
+                <path d="M349 40 l4 3 -4 2 z" fill="#F1E7CC"/><path d="M357 40 l-4 3 4 2 z" fill="#F1E7CC"/>
               </g>
+              <!-- LOWER claw (reaching left) -->
               <g class="fx-claw-bot">
-                <path class="d-crab" d="M372 116c-18 6-38 2-48-8 8-4 18-5 26-2-6-6-8-14-4-20 8 2 16 10 18 20 4-2 8-2 12 0z"/>
-                <path class="d-crab-2" d="M330 110c-6-3-9-9-8-15 6 1 12 6 14 12z"/>
+                <path d="M377 104 C 361 108 348 106 338 98" fill="none" stroke="url(#crabClaw)" stroke-width="11" stroke-linecap="round"/>
+                <path d="M338 98 C 324 92 312 92 306 100 C 314 104 324 104 330 101 C 322 106 318 112 320 118 C 330 116 340 108 340 100 Z" fill="url(#crabClaw)"/>
+                <path d="M306 100 l-6 -2 6 -2 z" fill="#C23D13"/><path d="M320 118 l-5 3 2 -6 z" fill="#C23D13"/>
+                <path d="M328 99 l4 2 -4 2 z" fill="#F1E7CC"/>
               </g>
             </g>
           </g>
 
-          <text class="label" x="60" y="146"><tspan class="snake-t">PYTHON</tspan>  ×  <tspan class="rust-t">RUST</tspan>  —  A FRIENDLY RIVALRY</text>
+          <text class="label" x="60" y="146"><tspan class="snake-t">PYTHON</tspan>  &#215;  <tspan class="rust-t">RUST</tspan>  &#8212;  A FRIENDLY RIVALRY</text>
+
         </svg>
       </div>
     </section>

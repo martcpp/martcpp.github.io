@@ -229,7 +229,7 @@ h1.name{
   #bgfx{opacity:.42;-webkit-mask-image:linear-gradient(180deg,#000,transparent 82%);mask-image:linear-gradient(180deg,#000,transparent 82%);}
 }
 
-/* ---------- Ferris vs Python duel ---------- */
+/* ---------- Blue crab vs Burmese python duel ---------- */
 .duel{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
   width:min(540px,84vw);z-index:0;pointer-events:none;opacity:.92;}
 .duel svg{width:100%;height:auto;display:block;overflow:visible;}
@@ -237,6 +237,13 @@ h1.name{
 .duel .label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;fill:var(--muted);text-transform:uppercase;}
 .duel .label .rust-t{fill:var(--rust);}
 .duel .label .snake-t{fill:var(--snake);}
+.duel .d-shadow{fill:#000;opacity:.13;}
+html[data-theme="dark"] .duel .d-shadow{opacity:.28;}
+.duel .d-hi{fill:#fff;}
+.duel .d-scale{fill:var(--snake-dark);}
+.duel .d-blotch{fill:var(--snake-dark);opacity:.5;}
+.duel .d-rim{fill:var(--rust-dark);}
+.duel .d-leg{stroke:var(--rust-dark);fill:none;stroke-linecap:round;stroke-linejoin:round;}
 
 .d-crab{fill:var(--rust);}
 .d-crab-2{fill:var(--rust-dark);}
@@ -248,10 +255,10 @@ h1.name{
 
 .fx-ferris{animation:ferrisLunge 4.6s ease-in-out infinite;transform-box:fill-box;}
 .fx-ferris-bob{animation:bob 3s ease-in-out infinite;transform-box:fill-box;}
-.fx-claw-top{animation:clawTop 4.6s ease-in-out infinite;transform-box:fill-box;transform-origin:15% 60%;}
-.fx-claw-bot{animation:clawBot 4.6s ease-in-out infinite;transform-box:fill-box;transform-origin:15% 40%;}
+.fx-claw-top{animation:clawTop 4.6s ease-in-out infinite;transform-box:fill-box;transform-origin:88% 45%;}
+.fx-claw-bot{animation:clawBot 4.6s ease-in-out infinite;transform-box:fill-box;transform-origin:88% 55%;}
 .fx-snake{animation:snakeLunge 4.6s ease-in-out infinite;transform-box:fill-box;}
-.fx-head{animation:headSway 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:90% 80%;}
+.fx-head{animation:headSway 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:14% 88%;}
 .fx-tongue{animation:tongue 1.1s ease-in-out infinite;transform-box:fill-box;transform-origin:0% 50%;}
 .fx-clash{animation:clashPop 4.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;stroke:var(--rust);}
 
