@@ -1,72 +1,58 @@
-# Personal Portfolio ⚡️ 
-> A clean, beautiful, responsive portfolio template for Software Developers!
+# Personal Portfolio
 
-> https://martcpp.github.io
+Mordecai Etukudo's personal portfolio site.
 
-![GitHub stars](https://img.shields.io/github/stars/martcpp/https://martcpp.github.io/) 
-![GitHub forks](https://img.shields.io/github/forks/martcpp/https://martcpp.github.io/)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/varadbhogayata/https://martcpp.github.io/commits/Converter)
-[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](https://martcpp.github.io/)
-[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/mordecai-etukudo-661b6a191/)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+Live: [martcpp.github.io](https://martcpp.github.io)
 
-### Website Preview
-<p align="center"> 
+## Preview
+
+<p align="center">
   <kbd>
-    <a href="https://martcpp.github.io/" target="_blank"><img src="examples/martp.png">
-  </a>
+    <a href="https://martcpp.github.io/" target="_blank"><img src="examples/martp.png" alt="Site preview"></a>
   </kbd>
 </p>
 
-:star: Star me on GitHub — it helps!
+## Features
 
-## Features 📋
-⚡️ Fully Responsive\
-⚡️ Valid HTML5 & CSS3\
-⚡️ Typing animation using `Typed.js`\
-⚡️ Easy to modify
+- Fully responsive, plain HTML/CSS/JS, no build step
+- Light, dark, and system theme toggle with no flash on load
+- Rotating 3D wireframe lattice in the hero, built with Three.js
+- Ferris vs Python "duel" illustration, animated with pure CSS
+- Scroll reveal and active section highlighting in the nav
 
-## Installation & Deployment 📦
-- Clone the repository and modify the content of <b>index.html</b> according to your requirement.
-- Add or remove images from `martcpp.github.io/assets/img/` directory as per your requirement.
-- I highly recommend to use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to deploy the website the EASIEST WAY.
-- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io`. Please don't give any other name.
-- Push the generated code to the `master` branch of this repository.
-- <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
+## Project structure
 
-## Sections 📚
-✔️ About me\
-✔️ Experience\
-✔️ Projects \
-✔️ Skills \
-✔️ Education\
-✔️ Contact Info\
-✔️ Resume
+```
+index.html
+assets/
+  css/style.css     site styles
+  js/main.js        theme toggle, mobile menu, scroll reveal, hero animations
+  img/              images and favicons
+  resume/           resume PDF
+```
 
-To view a live example, **[click here](https://martcpp.github.io/)**
+## Sections
 
-## Tools Used 🛠️
-* [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host my static website (HTML, CSS, JS).
-* [<b>Materialize</b>](https://materializecss.com/) - A CSS framework to get Google's Material Design components.
-* [<b>Typed.js</b>](https://mattboldt.com/demos/typed-js/) - JavaScript Library
+- About
+- What I do
+- Experience
+- Speaking & Community
+- Projects
+- Writing & Talks
+- Skills
+- Education
+- Contact
 
-## Contributing 💡
-#### Step 1
+## Running locally
 
-- **Option 1**
-    - 🍴 Fork this repo!
+Serve the folder with any static file server, for example:
 
-- **Option 2**
-    - 👯 Clone this repo to your local machine.
+```
+python -m http.server 8000
+```
 
+Then open `http://localhost:8000`.
 
-#### Step 2
+## Deployment
 
-- **Build your code** 🔨🔨🔨
-
-#### Step 3
-
-- 🔃 Create a new pull request.
-
-## License 📄
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+Hosted on GitHub Pages, served from the root of this repository.

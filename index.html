@@ -1,10 +1,32 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Mordecai Etukudo — Software &amp; Systems Engineer · Digital Identity &amp; Rust</title>
+  <meta name="description" content="Mordecai Etukudo - software and systems engineer. Production Rust for digital-identity protocols, backend &amp; API engineering, full-stack, and developer education. Rust Foundation Fellow, Rust Africa &amp; Rust-Edu lead." />
+  <meta name="author" content="Mordecai Etukudo" />
+  <meta name="theme-color" content="#F2F3F0" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- set theme before first paint to avoid flash -->
+  <script>
+    (function(){
+      try{
+        var mql = window.matchMedia('(prefers-color-scheme: dark)');
+        var saved = null;
+        try{ saved = localStorage.getItem('theme'); }catch(e){}
+        var mode = saved || 'system';
+        var resolve = function(m){ return (m==='dark' || (m==='system' && mql.matches)) ? 'dark' : 'light'; };
+        document.documentElement.setAttribute('data-theme', resolve(mode));
+        window.__theme = { mode: mode, mql: mql, resolve: resolve };
+      }catch(e){
+        document.documentElement.setAttribute('data-theme','light');
+      }
+    })();
+  </script>
 
   <!-- Google Tag Manager -->
   <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,61 +36,55 @@
   })(window,document,'script','dataLayer','GTM-xxxx');</script> -->
   <!-- End Google Tag Manager -->
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <title>MORDECAI ETUKUDO | Software Developer</title>
-
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YM34CQQMNH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YM34CQQMNH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YM34CQQMNH');
+  </script>
 
-  gtag('config', 'G-YM34CQQMNH');
-</script>
-
-  <!-- Open Graph-->
+  <!-- Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="MORDECAI ETUKUDO | Software Developer" />
-  <meta property="og:description" content="Software Developer" />
+  <meta property="og:title" content="Mordecai Etukudo — Software &amp; Software Engineer" />
+  <meta property="og:description" content="Production Rust for digital identity, backend engineering, full-stack, and developer education." />
   <meta property="og:url" content="https://martcpp.github.io/" />
-  <meta property="og:site_name" content="MORDECAI ETUKUDO | Software Developer" />
+  <meta property="og:site_name" content="Mordecai Etukudo — Systems Engineer" />
   <meta property="article:publisher" content="https://martcpp.github.io/" />
-  <meta property="og:image" content="https://martcpp.github.io/examples/martp.png" />
+  <meta property="og:image" content="https://martcpp.github.io/assets/img/passport-new.jpg" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@mart_cpp" />
-  <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
-  <meta name="twitter:description" content="Software Developer" />
+  <meta name="twitter:title" content="Mordecai Etukudo — Software &amp; Systems Engineer" />
+  <meta name="twitter:description" content="Production Rust for digital identity, backend engineering, full-stack, and developer education." />
   <meta name="twitter:url" content="https://twitter.com/mart_cpp" />
-  <meta name="author" content="Mordecai Etukudo" />
-  <meta name="description" content="Software Developer with a passion for backend development,artificial intelligence. and blockchain" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="assets/img/favicon/manifest.json" />
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="robots" content="index, follow" />
+  <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png" />
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -76,902 +92,640 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
   height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-  
-  <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/passport-new.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <!-- mdi-av-web small
-             mdi-av-my-library-books small-->
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      
-      <li class="bold">
-        <!--
-        ICONS:
-        -->
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
-        <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
-          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Mordecai's resume in a new tab" href="assets/resume/mordecai_resume.pdf" target="_blank"
-        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">MORDECAI ETUKUDO 
-      </a><span class="black-text">Software Developer</span>
+  <!-- ===== status strip ===== -->
+  <div class="strip">
+    <div class="wrap">
+      <span><span class="dot">◈</span> MORDECAI-ETUKUDO / PORTFOLIO</span>
+      <span class="hide-s">REV 2026 · STATUS: <b style="color:var(--rust)">LIVE</b> · NIGERIA (UTC+1)</span>
     </div>
-  </nav>
+  </div>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
+  <!-- ===== nav ===== -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="brand">MORDECAI<b>.</b>ETUKUDO</a>
+      <div class="nav-right">
+        <nav class="links" id="navLinks">
+          <a href="#about"><span class="n">01</span>&nbsp;About</a>
+          <a href="#approach"><span class="n">02</span>&nbsp;What I do</a>
+          <a href="#experience"><span class="n">03</span>&nbsp;Experience</a>
+          <a href="#community"><span class="n">04</span>&nbsp;Community</a>
+          <a href="#projects"><span class="n">05</span>&nbsp;Projects</a>
+          <a href="#contact" class="cta">Get in touch</a>
+        </nav>
+        <div class="theme" id="themeToggle" role="group" aria-label="Color theme">
+          <button data-set="light" aria-pressed="false" aria-label="Light theme" title="Light">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+          </button>
+          <button data-set="system" aria-pressed="true" aria-label="System theme" title="System">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+          </button>
+          <button data-set="dark" aria-pressed="false" aria-label="Dark theme" title="Dark">
+            <svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"/></svg>
+          </button>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
-          href="https://drive.google.com/file/d/1jrVG-86q40z8_bl2liKiS7LvJHyqzvMT/view?usp=sharing" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+  <main id="top">
 
-  <!-- Main Content-->
-  <main>
-    <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Hi, I'm <span class="teal">MORDECAI ETUKUDO</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <!-- <h5 style="color:#00796b">A <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
-              <h5>Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems.</h5>
-            </div>
-            <div class="social">
-              <a href="https://www.linkedin.com/in/mordecai-etukudo-661b6a191/" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="https://dev.to/martcpp" target="_blank">
-                <button class="icon-btn dev-to">
-                  <i class="fa fa-code"></i>
-                </button>
-              </a>
-              
-              <a href="https://twitter.com/mart_cpp" target="_blank">
-                <button class="icon-btn twitter">
-                  <i class="fa fa-twitter"></i>
-                </button>
-              </a>
-              
-              <a href="https://github.com/martcpp" target="_blank">
-                <button class="icon-btn github">
-                  <i class="fa fa-github"></i>
-                </button>
-              </a>
-            </div>
-            <div class='buttons'>
-              <a href="#about" class="readme">Read More</a>
-              <a href="#contact" class="contactme">Contact Me</a>
-            </div>
+    <!-- ===== hero ===== -->
+    <section class="hero">
+      <canvas id="bgfx" aria-hidden="true"></canvas>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Software &amp; Systems Engineer · Backend · Identity · Community</p>
+          <h1 class="name">Mordecai<br>Etukudo</h1>
+          <p class="lede">I build software across the stack from production <em>backends and APIs</em> to <em>cryptographic identity systems in Rust</em> and I help other engineers learn to build alongside me.</p>
+          <div class="hero-links">
+            <a class="primary" href="#projects">View work</a>
+            <a href="https://github.com/martcpp" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/mordecai-etukudo-661b6a191/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://dev.to/martcpp" target="_blank" rel="noopener">dev.to</a>
+            <a href="assets/resume/mordecai_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
           </div>
         </div>
+
+        <aside class="spec-card" aria-label="Profile summary">
+          <div class="bar"><span>PROFILE.SPEC</span><span><b>v2026</b></span></div>
+          <img class="spec-photo" src="assets/img/passport-new.jpg" alt="Portrait of Mordecai Etukudo" loading="lazy" />
+          <div class="spec-rows">
+            <div class="spec-row"><span class="k">Role</span><span class="v">Software Engineer, adorsys</span></div>
+            <div class="spec-row"><span class="k">Works in</span><span class="v">Rust · Python · TypeScript · C/C++</span></div>
+            <div class="spec-row"><span class="k">Builds</span><span class="v">Backends · APIs · identity systems · full-stack</span></div>
+            <div class="spec-row"><span class="k">Also</span><span class="v">Educator · writer · community lead</span></div>
+            <div class="spec-row"><span class="k">Location</span><span class="v">Nigeria · Remote</span></div>
+            <div class="spec-row"><span class="k">Status</span><span class="v"><span class="live">◆ Open to collaboration</span></span></div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Ferris (Rust) vs Python snake, a friendly rivalry -->
+      <div class="duel" aria-hidden="true" title="Rust vs Python — a friendly rivalry">
+        <svg viewBox="0 0 520 150" role="img">
+          <line class="ground" x1="20" y1="128" x2="500" y2="128"/>
+
+          <!-- Python snake (left, facing right) -->
+          <g class="fx-snake">
+            <g class="fx-snake-body">
+              <path class="d-snake-2" d="M60 126c0-20 16-30 34-30 20 0 30 12 30 24 0 10-8 16-16 16H70c14 0 18-6 18-14 0-8-6-12-14-12-10 0-16 8-16 20z"/>
+              <path class="d-snake" d="M58 124c0-20 16-32 36-32 22 0 32 13 32 26 0 11-8 17-17 17H68c14 0 19-6 19-15 0-8-6-13-15-13-11 0-17 9-17 22z"/>
+            </g>
+            <!-- head -->
+            <g class="fx-head">
+              <path class="d-snake" d="M120 96c14-2 30 4 34 16 3 9-2 18-12 20-13 3-26-4-28-16-1-9 3-18 6-20z"/>
+              <ellipse class="d-eye" cx="146" cy="104" rx="5.5" ry="6"/>
+              <circle class="d-pupil" cx="147.5" cy="104" r="2.6"/>
+              <path class="fx-tongue d-tongue" d="M160 116l16 2-6 3 7 2-17 1z"/>
+            </g>
+          </g>
+
+          <!-- clash spark (center) -->
+          <g class="fx-clash" fill="none" stroke-width="2.4" stroke-linecap="round">
+            <path d="M260 78l0-16M260 108l0-16M244 85l-12-6M288 79l-12 6M244 100l-12 6M288 106l-12-6"/>
+            <circle cx="260" cy="92" r="4" fill="var(--rust)" stroke="none"/>
+          </g>
+
+          <!-- Ferris the crab (right, facing left) -->
+          <g class="fx-ferris">
+            <g class="fx-ferris-bob">
+              <!-- legs -->
+              <g stroke-linecap="round">
+                <path d="M392 120l-16 8M404 124l-10 10M436 124l10 10M448 120l16 8" stroke="var(--rust-dark)" stroke-width="4" fill="none"/>
+              </g>
+              <!-- shell -->
+              <ellipse class="d-crab" cx="420" cy="104" rx="52" ry="30"/>
+              <ellipse class="d-crab-2" cx="420" cy="112" rx="40" ry="16"/>
+              <!-- eye stalks -->
+              <path d="M406 78v-18M434 78v-18" stroke="var(--rust)" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <circle class="d-eye" cx="406" cy="56" r="8"/><circle class="d-pupil" cx="404" cy="56" r="3.6"/>
+              <circle class="d-eye" cx="434" cy="56" r="8"/><circle class="d-pupil" cx="432" cy="56" r="3.6"/>
+              <!-- claws (toward center / left) -->
+              <g class="fx-claw-top">
+                <path class="d-crab" d="M372 92c-18-6-38-2-48 8 8 4 18 5 26 2-6 6-8 14-4 20 8-2 16-10 18-20 4 2 8 2 12 0z"/>
+                <path class="d-crab-2" d="M330 98c-6 3-9 9-8 15 6-1 12-6 14-12z"/>
+              </g>
+              <g class="fx-claw-bot">
+                <path class="d-crab" d="M372 116c-18 6-38 2-48-8 8-4 18-5 26-2-6-6-8-14-4-20 8 2 16 10 18 20 4-2 8-2 12 0z"/>
+                <path class="d-crab-2" d="M330 110c-6-3-9-9-8-15 6 1 12 6 14 12z"/>
+              </g>
+            </g>
+          </g>
+
+          <text class="label" x="60" y="146"><tspan class="snake-t">PYTHON</tspan>  ×  <tspan class="rust-t">RUST</tspan>  —  A FRIENDLY RIVALRY</text>
+        </svg>
       </div>
     </section>
 
-    <!-- Second Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <!-- <blockquote>
-          <h2>
-            A Software Developer with a passion for Backend Development and Artificial Intelligence.
-
-          </h2>
-        </blockquote> -->        
-        <p>
-            Hello, I'm Mordecai Etukudo, a dedicated software engineer specializing in back-end development. Currently, I'm both a student and an enthusiastic learner eager to expand my skills and contribute to innovative projects. I'm thrilled to connect with like-minded professionals and organizations.
-
-            I bring a strong foundation in back-end technologies, with expertise in Python,FastApi, Django, Flask, MySQL, PostgreSQL, MongoDB, HTML5, CSS, Rust, and C++. Over 3 years of professional experience, I've fine-tuned my abilities, particularly in Python, Flask, and Django, through real-world application development.
-
-            Currently, I'm delving into Rust and blockchain , eager to explore its unique features and enhance my problem-solving capabilities further.
-
-            Let's connect and explore opportunities to collaborate and grow together.
-        </p>
-        <p>
-          <ul>
-            <li><b>Languages:</b> Python,Rust, PHP, C, C++, HTML/CSS, Bash,  </li>
-            <li><b>Databases:</b> MySQL, PostgreSQL, NOSQL</li>
-            <li><b>Libraries:</b> Pandas, OpenCV, </li>
-            <li><b>Frameworks:</b> Flask, Django, FastApi,Bootstrap, Nginx, axum, Actix,Sqlx</li>
-            <li><b>Tools & Technologies:</b> Git, Docker, AWS, GCP,Azure , JIRA</li>
-          </ul>
-          
-        </p>
-          
-        <!-- <p>
-          
-          Current Focus:
-            Currently, I'm delving into Rust, eager to explore its unique features and enhance my problem-solving capabilities further.
-        </p> -->
-        <p>
-          Looking for an opportunity to work in a challenging position combining my skills in Software Engineering, which provides professional development, interesting experiences and personal growth.
-        </p>
-        <!-- <p>
-          Another Paragraph
-        </p>  -->
-        <!-- <p>
-        <strong>Current Focus</strong>:&nbsp;<a aria-label="Currently, I'm delving into Rust, eager to explore its unique features and enhance my problem-solving capabilities further"
-          href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-          aria-label="Navigate to the Full Stack React homepage"
-          href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-          aria-label='Navigate to the article "Scalable CSS"'
-          href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-        </p> -->
-      </div>
-    </section>
-
-
-    <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
-      <div class="container">
-
-        <!-- Latest Experience -->
-        
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://rustfoundation.org/" target="_blank"><img alt="Rust Foundation logo"
-                    src="/assets/img/rust_foundation_logo.jpeg" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://rustfoundation.org/" target="_blank"
-                      class="teal-text hoverline">Rust Foundation</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Fellowship Member</div>
+    <!-- ===== about ===== -->
+    <section class="block" id="about">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§01</span><h2>About</h2></div>
+          <span class="sec-tag">// who i am</span>
+        </div>
+        <div class="about-grid reveal">
+          <div>
+            <p>I'm a <strong>software and systems engineer</strong> who likes working across the whole stack and going as deep as a problem demands. My range runs from high-level product features down to byte-level cryptographic encoding, and I move between them comfortably.</p>
+            <p>I started in <strong>backend and API engineering</strong>, spending several years building production systems in <strong>Python and Django</strong> — REST APIs, relational data models, auth, and full e-commerce platforms — plus full-stack product work pairing those backends with <strong>React / TypeScript</strong> frontends. That grounding in shipping real systems still shapes how I work.</p>
+            <p>Today I write production <strong>Rust</strong> for digital-identity infrastructure at adorsys: identity-wallet protocols like <strong>OpenID for Verifiable Credentials</strong> (OID4VCI / OID4VP), <strong>ISO 18013-5</strong> mobile documents, <strong>SD-JWT</strong>, and the <strong>OAuth Token Status List</strong> - the kind of work where correctness is measured against the specification, line by line, and where I dig into COSE/CBOR, cryptographic signing, and supply-chain security.</p>
+            <p>Alongside the code, teaching is a core part of what I do. As a <strong>2024 Rust Foundation Fellow</strong>, co-founder of <strong>Rust Africa</strong>, and co-lead of the <strong>Rust-Edu</strong> revitalization, I build community, mentor engineers, and write and speak about making hard systems approachable. I care a great deal about how the next generation learns to build.</p>
+            <p>My approach across all of it is consistent: <strong>make the smallest change that is structurally correct</strong>, back it with tests, review it hard, and ground every decision in evidence rather than guesswork.</p>
+          </div>
+          <div class="aside-card">
+            <h3>Quick facts</h3>
             <ul>
-              <li>
-                Spearheaded the adoption of Rust programming language within African universities, fostering a collaborative environment and
-increasing engagement by 60%. https://rustafrica.org/
-
-              </li>
-              <li>
-                Conducted workshops and training sessions to promote Rust, enhancing Rust skills among students and educators, resulting in
-a 80% increase in Rust adoption.
-
-              </li>
-              <li>
-                Collaborated with university systems to integrate Rust into their curriculum, driving innovation and expanding the developer
-community.
-              </li>
-                <b>Tools:</b> Rust, leadership , community building
-              </li>
+              <li>~4 years shipping production software</li>
+              <li>Rust · Python · TypeScript · C / C++</li>
+              <li>Backend, APIs, full-stack &amp; systems</li>
+              <li>Digital identity &amp; applied cryptography</li>
+              <li>2024 Rust Foundation Fellow</li>
+              <li>RustWeek 2026 speaker</li>
+              <li>Rust Africa &amp; Rust-Edu lead</li>
+              <li>Published technical writer</li>
             </ul>
           </div>
-          <div class="card-action">
-            <span>sept 2024  |Dover, DE 19901 USA · Remote</span>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.befira.com/" target="_blank"><img alt="befira logo"
-                    src="/assets/img/befira_logo.jfif" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.befira.com/" target="_blank"
-                      class="teal-text hoverline">Fira</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Software Engineer</div>
-            <ul>
-              <li>
-                Developed and managed the backend of Fira platform using django,PostgreSQL,Docker and Azure .
-              </li>
-              <li>
-                Worked on three web applications targeting customers, selling vendors, and admin users; RESTful APIs with functionalities
-such as login/sign up, view a product, add a product to cart, checkout the order, etc.
-              </li>
-              <li>Improved the response time by 20% by refactoring the codebase and changing database design and queries.</li>
-              <li>Added a bulk upload feature which reduced the manual work of adding products into a database.</li>
-              <li>
-                <b>Tools:</b> Python, django, PostgreSQL
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Dec 2023 - Feb 2024  |Orlando, Florida, United States · Remote</span>
-          </div>
-        </div>
-
-        
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://docs.deepwisdom.ai/main/en/" target="_blank"><img alt="metaGpt logo"
-                    src="/assets/img/metagpt.jpg" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://docs.deepwisdom.ai/main/en/" target="_blank"
-                      class="teal-text hoverline">MetaGpt</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Programmer/techical writer (open soucre)</div>
-            <ul>
-              <li>
-                Propose the creation of video documentation for easy user accessibility. This boosts usage by 60%.
-                Build and implement the use of major functionality.
-              </li>
-              <li>
-                build the documentation sites with others team mate https://www.deepwisdom.ai/
-              </li>
-              <li>
-                Translate Chinese into English for easy comprehension by developers who are not familiar with Chinese.
-              </li>
-                <b>Tools:</b> Python, vue , markdown
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Jun 2023 - Nov 2023 |Shanghai, China · Remote</span>
-          </div>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <img alt="postman logo" src="/assets/img/postman.png" class="responsive-img center-block" />
-
-              </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.postman.com/" class="teal-text hoverline">Postman</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2"> Student expert leader </div>
-            <ul>
-              <li>
-              promote API literacy among student
-              Lead a workshop, training session, or event to teach Postman.
-              Use Postman resources and recommended practices to help people learn API skills in your community, school, or at an official Postman event.
-              </li>
-              <li>
-                build scable API 
-                API testing and decumentation 
-              </li>
-              <li>
-                <b>Tools:</b> Python, Postman, FastApi, express, openApi
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Nov 2023 - Present | New York, New York, United States · Remote</span>
-          </div>
-        </div>
-
-        <!-- Experience 3 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://hackernoon.com/" target="_blank"><img alt="Cignex logo"
-                    src="/assets/img/HackerNoon.jpg" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://hackernoon.com/" target="_blank"
-                      class="teal-text hoverline">HackerNoon</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Technical Writer</div>
-            <ul>
-              <li>
-                create content that impact life on the web3 platform|| weekly publication
-              </li>
-              <li>
-                Write articles on various topics such as web3, blockchain, and cryptocurrency.
-              </li>
-              <li>
-                <b>Tools:</b> markdown, google docs, github
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Jun 2022 - Aug 2023 | Remote</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/assets/img/wiatapi.jfif" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">wiatlist Api<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A waitlist api  based on Django and django rest framework
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Django,DRF,PostgreSQL,Docker,Git,Azure</li>
-                  <li>create costumize waitlist email send to new users</li>
-                  <li>have a data base on new user awaiting new product</li>
-                  <li>send a mail to user once product is lunch</li>
-                  <li>integration to web,mobile and desktop app</li>
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/martcpp/wiatlist-mailer-api"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="quiz app" src="/assets/img/biblebot.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Bible Bot<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An automated bible bot that send daily bible verse to user build with python.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, Twitter-Api,Azure,Docker,Meta Ai api</li>
-                  <li>Generate daily bible verse, explantion and prayer point. using AI</li>
-                  <li>Post daily to twitter this process is automated</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://twitter.com/BibleBotAI" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/martcpp/Bible_chatbot"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 1. Django Project -->
-          <!-- <div class="col s12 m6 l6">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="django web app" src="/assets/img/project-library-logo.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Local Library Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A web-app that creates an online catalog for a small local library, where users can browse available books and manage their accounts.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, SQLite, Django, Heroku</li>
-                  <li>Users can view list and detail information for books and authors.</li>
-                  <li>Admin users can create and manage models.</li>
-                  <li>Librarians can renew reserved books.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://django-local-lib.herokuapp.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/django-local-library"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Flask Project -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of web app" src="/assets/img/gpt.jfif"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">ChatGpt(Google Gemini)<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A chatGpt clone of the using the google gemini api to generate text
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, Gemini api, Streamlit, Streamlit cloud</li>
-                  <li>answer any question using the generative ai data of gemini</li>
-                  <li>natural Languages processing </li>
-                  <li>solve coding exercise</li>
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://build-with-ai-uniben.streamlit.app/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/martcpp/build-with-ai-uniben"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- VQA -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/project-aim_bert-bias.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Rust learning exercise<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A resources for having hand on rust programming language programming experience with coding exercise
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>coding exercise from noivce to intermidate Rust</li>
-                  <li>solution to exercise that guide user on what to do.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/Rust-Nigeria/rust-exercise" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
 
-    <!-- Fifth Section: Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
-      <div class="container">
-        <!-- Languages and Databases -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Languages and Databases</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/rustlang.jpg" class="responsive-img" />Rust
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/postgresql-logo.png" class="responsive-img" />PostgreSQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
-              </div>
-            </div>
-          </div>
+    <!-- ===== what i do ===== -->
+    <section class="block" id="approach">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§02</span><h2>What I do</h2></div>
+          <span class="sec-tag">// the full range</span>
         </div>
 
-        <!-- <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Libraries</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img" />matplotlib
-              </div>
-            </div>
-          </div>
-        </div> -->
+        <div class="reveal">
 
-        <!-- Frameworks -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Frameworks</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/django-logo.webp" class="responsive-img" />Django
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/flask-logo.png" class="responsive-img" />Flask
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/bootstrap.png" class="responsive-img" />Bootstrap
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/fastapi.jpg" class="responsive-img" />FastApi
-              </div>
+          <div class="do-row">
+            <span class="do-num">01</span>
+            <div class="do-main">
+              <h3>Systems &amp; identity engineering</h3>
+              <p>Production Rust for digital-identity infrastructure - verifiable credentials, mobile documents, and cryptographic protocols built strictly to specification. This is where I go deepest.</p>
+            </div>
+            <div class="do-side">
+              <span class="lab">Tools &amp; standards</span>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">OID4VCI/VP</span><span class="tag">ISO 18013-5</span><span class="tag">SD-JWT</span><span class="tag">COSE/CBOR</span><span class="tag">axum</span></div>
             </div>
           </div>
+
+          <div class="do-row">
+            <span class="do-num">02</span>
+            <div class="do-main">
+              <h3>Backend &amp; API development</h3>
+              <p>Designing and shipping REST APIs, data models, and auth for real products - from e-commerce platforms to launch tooling. Several years of production Python behind me.</p>
+            </div>
+            <div class="do-side">
+              <span class="lab">Tools</span>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Django / DRF</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">REST</span></div>
+            </div>
+          </div>
+
+          <div class="do-row">
+            <span class="do-num">03</span>
+            <div class="do-main">
+              <h3>Full-stack product work</h3>
+              <p>Building end-to-end features - typed React / TypeScript frontends on top of Rust or Python backends, wired together with clean, documented APIs.</p>
+            </div>
+            <div class="do-side">
+              <span class="lab">Tools</span>
+              <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">sqlx</span></div>
+            </div>
+          </div>
+
+          <div class="do-row">
+            <span class="do-num">04</span>
+            <div class="do-main">
+              <h3>Developer education &amp; community</h3>
+              <p>Growing the Rust community across Africa and academia through workshops, mentorship, and curriculum - as a Rust Foundation Fellow, Rust Africa lead, and Rust-Edu co-lead.</p>
+            </div>
+            <div class="do-side">
+              <span class="lab">Where</span>
+              <div class="tags"><span class="tag">Rust Africa</span><span class="tag">Rust-Edu</span><span class="tag">Rust Foundation</span><span class="tag">Postman</span></div>
+            </div>
+          </div>
+
+          <div class="do-row">
+            <span class="do-num">05</span>
+            <div class="do-main">
+              <h3>Technical writing &amp; speaking</h3>
+              <p>Turning complex systems into clear explanations - conference talks, documentation, and published articles on Rust, APIs, web3, and how engineers learn.</p>
+            </div>
+            <div class="do-side">
+              <span class="lab">Where</span>
+              <div class="tags"><span class="tag">RustWeek</span><span class="tag">HackerNoon</span><span class="tag">dev.to</span><span class="tag">Docs</span></div>
+            </div>
+          </div>
+
         </div>
-
-        <!-- Other -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Other</h4>
-            <div class="row text-center">
-
-
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/git.png" class="responsive-img" />Git
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/aws.png" class="responsive-img" />AWS
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/dockerlogo.jpg" class="responsive-img" />Docker
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/aurelogo.jfif" class="responsive-img" />Azure
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/techwritelogo.png" class="responsive-img" />Technical Writing
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- certifications -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Certificates</h4>
-            <div class="row text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/assets/img/c-rust.png">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text"><a href="https://www.coursera.org/account/accomplishments/verify/TKVCGMBDNUY4">Rust Fundamental (Duke University)</a></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/assets/img/c-postman.png">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text"><a href="https://verify.skilljar.com/c/yeyapyjvefbk">AI Text Summarizer App (postman)</a></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/assets/img/c-datascinec.png">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text"> <a href="https://www.datacamp.com/statement-of-accomplishment/course/45fd01e7a9c12c6669be87d153aab80af27e61bd?raw=1">Introduction To Python (Datacamp)</a></span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-
       </div>
     </section>
 
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.uniben.edu/" target="_blank" class="teal-text hoverline">University of Benin</a></span>
-                </p>
-                <p class="brown-text">Edo, Nigeria</p>
-                <p>
-                  <b>Degree: </b>Marine Engineering     
-                  <br>
-                  <b>Satus: </b>in progress
-                </p>
+    <!-- ===== experience ===== -->
+    <section class="block" id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§03</span><h2>Experience</h2></div>
+          <span class="sec-tag">// where i've built</span>
+        </div>
 
+        <div class="xp reveal">
+
+          <div class="xp-item">
+            <div class="xp-when">Present<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://adorsys.com/en/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/adorsyslogo.png" alt="adorsys logo" loading="lazy" /></a>
+                <h3>Software Engineer</h3><span class="at">·</span><a href="https://adorsys.com/en/" target="_blank" rel="noopener" class="org">adorsys</a>
+              </div>
+              <div class="xp-body">
+                Building production Rust for a cloud identity-wallet — issuance, presentation, and verification of verifiable credentials.
                 <ul>
-                  <p>
-                    <b>Relevant Courseworks:</b>
-                  <ul>
-                    <li>Foundation of python</li>
-                    <li>Naval design</li>
-                    <li>Engineering mathematics and logic</li>                    
-                  </ul>
-                  </p>
-
+                  <li>Implement OID4VCI / OID4VP flows, ISO 18013-5 mdoc verification, and SD-JWT.</li>
+                  <li>Led a spec-compliance audit of an OAuth Token Status List server, catching MUST-level CWT/COSE bugs and authoring a compliance matrix.</li>
+                  <li>Hardened the Rust supply chain with <span class="mono">cargo audit</span> / <span class="mono">deny</span> / <span class="mono">vet</span> and CI gating.</li>
                 </ul>
+              </div>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">axum</span><span class="tag">COSE/CBOR</span><span class="tag">OpenID4VC</span><span class="tag">Cryptography</span></div>
+            </div>
+          </div>
+
+          <div class="xp-item">
+            <div class="xp-when">2024 — Present<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://rustfoundation.org/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/rust_foundation_logo.jpeg" alt="Rust Foundation logo" loading="lazy" /></a>
+                <h3>Fellow</h3><span class="at">·</span><a href="https://rustfoundation.org/" target="_blank" rel="noopener" class="org">Rust Foundation</a>
+              </div>
+              <div class="xp-body">
+                Selected as a 2024 Rust Foundation Fellow, driving Rust adoption and education across African universities.
+                <ul>
+                  <li>Run workshops and training that grew Rust engagement across student and educator communities.</li>
+                  <li>Partner with university programs to bring Rust into the curriculum.</li>
+                </ul>
+              </div>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">Community</span><span class="tag">Education</span></div>
+            </div>
+          </div>
+
+          <div class="xp-item">
+            <div class="xp-when">Dec 2023 — Feb 2024<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://www.befira.com/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/befira_logo.jfif" alt="Fira logo" loading="lazy" /></a>
+                <h3>Software Engineer</h3><span class="at">·</span><a href="https://www.befira.com/" target="_blank" rel="noopener" class="org">Fira</a>
+              </div>
+              <div class="xp-body">
+                Built and ran the backend for a multi-application e-commerce platform (customer, vendor, and admin).
+                <ul>
+                  <li>Designed RESTful APIs for auth, catalog, cart, and checkout with Django &amp; PostgreSQL.</li>
+                  <li>Cut response time ~20% through query and schema redesign; added a bulk product-upload feature.</li>
+                </ul>
+              </div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+            </div>
+          </div>
+
+          <div class="xp-item">
+            <div class="xp-when">Jun — Nov 2023<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://docs.deepwisdom.ai/main/en/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/metagpt.jpg" alt="MetaGPT logo" loading="lazy" /></a>
+                <h3>Open-Source Contributor &amp; Technical Writer</h3><span class="at">·</span><a href="https://docs.deepwisdom.ai/main/en/" target="_blank" rel="noopener" class="org">MetaGPT</a>
+              </div>
+              <div class="xp-body">
+                Contributed docs and tooling to a multi-agent framework used by developers worldwide.
+                <ul>
+                  <li>Built documentation sites and proposed video guides that improved onboarding.</li>
+                  <li>Translated core docs for a global, non-Chinese-speaking developer audience.</li>
+                </ul>
+              </div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Docs</span><span class="tag">Open Source</span></div>
+            </div>
+          </div>
+
+          <div class="xp-item">
+            <div class="xp-when">2023 — Present<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://www.postman.com/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/postman.png" alt="Postman logo" loading="lazy" /></a>
+                <h3>Student Expert Leader</h3><span class="at">·</span><a href="https://www.postman.com/" target="_blank" rel="noopener" class="org">Postman</a>
+              </div>
+              <div class="xp-body">
+                Promote API literacy through community workshops and training.
+                <ul>
+                  <li>Teach API design, testing, and documentation using Postman and OpenAPI.</li>
+                </ul>
+              </div>
+              <div class="tags"><span class="tag">APIs</span><span class="tag">Postman</span><span class="tag">OpenAPI</span></div>
+            </div>
+          </div>
+
+          <div class="xp-item">
+            <div class="xp-when">2022 — 2023<span class="place">Remote</span></div>
+            <div>
+              <div class="xp-role">
+                <a href="https://hackernoon.com/" target="_blank" rel="noopener"><img class="xp-logo" src="assets/img/HackerNoon.jpg" alt="HackerNoon logo" loading="lazy" /></a>
+                <h3>Technical Writer</h3><span class="at">·</span><a href="https://hackernoon.com/" target="_blank" rel="noopener" class="org">HackerNoon</a>
+              </div>
+              <div class="xp-body">
+                Published weekly articles on web3, blockchain, and developer topics for a large technical readership.
+              </div>
+              <div class="tags"><span class="tag">Writing</span><span class="tag">Web3</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== speaking & community ===== -->
+    <section class="block" id="community">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§04</span><h2>Speaking &amp; Community</h2></div>
+          <span class="sec-tag">// beyond the codebase</span>
+        </div>
+
+        <div class="comm-grid reveal">
+
+          <div class="comm">
+            <div class="role"><span>Speaker</span><span class="yr">RustWeek 2026 · Utrecht, NL</span></div>
+            <h3>Shaping Tomorrow's Software Engineers</h3>
+            <p>A talk at the world's largest Rust conference on developer education and building the next generation of Rust engineers.</p>
+            <a class="more" href="https://2026.rustweek.org/speakers/" target="_blank" rel="noopener">RustWeek speakers ↗</a>
+          </div>
+
+          <div class="comm">
+            <div class="role"><span>Co-founder &amp; Lead</span><span class="yr">Ongoing</span></div>
+            <h3>Rust Africa</h3>
+            <p>Growing the Rust community across the continent through workshops, mentorship, and curriculum work — expanding who gets to build in Rust.</p>
+            <a class="more" href="https://rustafrica.org/" target="_blank" rel="noopener">rustafrica.org ↗</a>
+          </div>
+
+          <div class="comm">
+            <div class="role"><span>Co-lead</span><span class="yr">2026 Refresh</span></div>
+            <h3>Rust-Edu</h3>
+            <p>Rebuilding Rust-Edu alongside Bart Massey (Portland State University) to bring Rust into academic settings and support educators teaching it.</p>
+            <a class="more" href="https://rust-edu.org/" target="_blank" rel="noopener">rust-edu.org ↗</a>
+          </div>
+
+          <div class="comm">
+            <div class="role"><span>Fellow</span><span class="yr">2024</span></div>
+            <h3>Rust Foundation Fellowship</h3>
+            <p>Recognized for community leadership and education work advancing Rust adoption across universities and developer communities.</p>
+            <a class="more" href="https://rustfoundation.org/" target="_blank" rel="noopener">rustfoundation.org ↗</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== projects ===== -->
+    <section class="block" id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§05</span><h2>Projects</h2></div>
+          <span class="sec-tag">// selected work</span>
+        </div>
+
+        <div class="proj-grid reveal">
+
+          <div class="proj">
+            <div class="phead"><span>Identity · Standards</span><span class="lang">Rust</span></div>
+            <div class="pbody">
+              <h3>Token Status List Server</h3>
+              <p>A server implementing the IETF OAuth Token Status List draft — compliance-audited against the spec (CWT / COSE), with a hardened supply chain and CI security gating.</p>
+              <div class="plinks"><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-status-list/" target="_blank" rel="noopener">Spec</a></div>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="phead"><span>Infra · Self-hosting</span><span class="lang">Rust · NixOS</span></div>
+            <div class="pbody">
+              <h3>Fedicore-Edge</h3>
+              <p>An orchestration agent for running self-hosted Fediverse services on edge hardware, packaged as a NixOS flake — with coordinated transactional rollback across system, schema, and data.</p>
+              <div class="plinks"><a href="https://github.com/martcpp" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="phead"><span>Full-stack</span><span class="lang">Rust · TypeScript</span></div>
+            <div class="pbody">
+              <h3>Board Task Tracker</h3>
+              <p>A full-stack task board: a Rust (axum / sqlx) backend paired with a typed React / TypeScript frontend.</p>
+              <div class="plinks"><a href="https://github.com/martcpp" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="phead"><span>Language · Interpreter</span><span class="lang">Rust</span></div>
+            <div class="pbody">
+              <h3>illusionlang</h3>
+              <p>A tree-walking interpreter for a small language — a hands-on study of lexing, parsing, and evaluation in Rust.</p>
+              <div class="plinks"><a href="https://github.com/martcpp/illusionlang" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </div>
+
+          <div class="proj">
+            <img class="pthumb" src="assets/img/biblebot.jpg" alt="Bible Bot" loading="lazy" />
+            <div class="phead"><span>Automation · AI</span><span class="lang">Python</span></div>
+            <div class="pbody">
+              <h3>Bible Bot</h3>
+              <p>Generates a daily Bible verse, explanation, and prayer with AI and auto-posts it to X — fully scheduled and containerized.</p>
+              <div class="plinks">
+                <a href="https://github.com/martcpp/Bible_chatbot" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://twitter.com/BibleBotAI" target="_blank" rel="noopener">@BibleBotAI</a>
               </div>
             </div>
-
-            
           </div>
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://eng.uniben.edu/diploma-in-maritime-studies-information-and-communication-technology/" target="_blank" class="teal-text hoverline">Center for Maritime Studies and ICT, University of Benin</a></span>
-                </p>
-                <p class="brown-text">Edo,Nigeria</p>
-                <p>
-                  <b>Degree: </b>Dipoloma in Maritime Studies and ICT 
-                  <br>
 
-                </p>
+          <div class="proj">
+            <img class="pthumb" src="assets/img/wiatapi.jfif" alt="Waitlist Mailer API" loading="lazy" />
+            <div class="phead"><span>API · Backend</span><span class="lang">Django · DRF</span></div>
+            <div class="pbody">
+              <h3>Waitlist Mailer API</h3>
+              <p>A customizable waitlist API — captures early users and sends templated launch emails when a product goes live, ready for web, mobile, and desktop.</p>
+              <div class="plinks"><a href="https://github.com/martcpp/wiatlist-mailer-api" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </div>
 
-                <ul>
-                  <p>
-                    <b>Relevant Courseworks:</b>
-                  <ul>
-                    <li>Data Structures and Algorithms</li>
-                    <li>Database Management Systems</li>
-                    <li>Operating Systems</li>
-                    <li>maritime laws</li>
-                  </ul>
-                  </p>
+        </div>
+      </div>
+    </section>
 
-                </ul>
-              </div>
+    <!-- ===== writing ===== -->
+    <section class="block" id="writing">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§06</span><h2>Writing &amp; Talks</h2></div>
+          <span class="sec-tag">// explaining hard things</span>
+        </div>
+
+        <div class="writ reveal">
+          <div class="writ-item">
+            <span class="writ-when">RustWeek 2026</span>
+            <span class="writ-title">Shaping Tomorrow's Software Engineers</span>
+            <span class="writ-out">Talk · Utrecht</span>
+          </div>
+          <div class="writ-item">
+            <span class="writ-when">2026</span>
+            <span class="writ-title">How to Learn Rust — Not a Roadmap Kind of Guide</span>
+            <span class="writ-out">Article · LinkedIn</span>
+          </div>
+          <div class="writ-item">
+            <span class="writ-when">Ongoing</span>
+            <span class="writ-title">Notes on Rust, APIs &amp; systems engineering</span>
+            <span class="writ-out">dev.to</span>
+          </div>
+          <div class="writ-item">
+            <span class="writ-when">2022 — 2023</span>
+            <span class="writ-title">Articles on web3, blockchain &amp; developer tooling</span>
+            <span class="writ-out">HackerNoon</span>
+          </div>
+          <div class="writ-item">
+            <span class="writ-when">Ongoing</span>
+            <span class="writ-title">API design, testing &amp; documentation workshops</span>
+            <span class="writ-out">Postman</span>
+          </div>
+        </div>
+        <p class="mono" style="font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.03em;">Full archive on <a href="https://dev.to/martcpp" target="_blank" rel="noopener" style="color:var(--rust-dark);border-bottom:1px solid var(--rust);">dev.to/martcpp</a></p>
+      </div>
+    </section>
+
+    <!-- ===== skills ===== -->
+    <section class="block" id="skills">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§07</span><h2>Skills</h2></div>
+          <span class="sec-tag">// the toolkit</span>
+        </div>
+
+        <div class="reveal">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="chips">
+              <span class="chip"><img src="assets/img/rustlang.jpg" alt="" loading="lazy" />Rust</span>
+              <span class="chip"><img src="assets/img/python-logo-1-300x300.jpg" alt="" loading="lazy" />Python</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">C</span>
+              <span class="chip">C++</span>
+              <span class="chip"><img src="assets/img/shell-logo-1-300x300.jpg" alt="" loading="lazy" />Bash</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Identity &amp; Security</h3>
+            <div class="chips">
+              <span class="chip">OID4VCI / OID4VP</span><span class="chip">ISO 18013-5 mdoc</span><span class="chip">SD-JWT</span><span class="chip">OAuth Token Status List</span><span class="chip">COSE / CBOR</span><span class="chip">JOSE / JWT</span><span class="chip">cargo audit·deny·vet</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <div class="chips">
+              <span class="chip">axum</span><span class="chip">Actix</span><span class="chip">sqlx</span>
+              <span class="chip"><img src="assets/img/fastapi.jpg" alt="" loading="lazy" />FastAPI</span>
+              <span class="chip"><img src="assets/img/django-logo.webp" alt="" loading="lazy" />Django</span>
+              <span class="chip"><img src="assets/img/flask-logo.png" alt="" loading="lazy" />Flask</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Data</h3>
+            <div class="chips">
+              <span class="chip"><img src="assets/img/postgresql-logo.png" alt="" loading="lazy" />PostgreSQL</span>
+              <span class="chip"><img src="assets/img/mysql-logo-1-300x300.jpg" alt="" loading="lazy" />MySQL</span>
+              <span class="chip">SQLite</span><span class="chip">MongoDB</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Infra &amp; Tooling</h3>
+            <div class="chips">
+              <span class="chip"><img src="assets/img/dockerlogo.jpg" alt="" loading="lazy" />Docker</span>
+              <span class="chip"><img src="assets/img/aws.png" alt="" loading="lazy" />AWS</span>
+              <span class="chip">GCP</span>
+              <span class="chip"><img src="assets/img/aurelogo.jfif" alt="" loading="lazy" />Azure</span>
+              <span class="chip">NixOS</span>
+              <span class="chip"><img src="assets/img/git.png" alt="" loading="lazy" />Git</span>
+              <span class="chip">CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Practices</h3>
+            <div class="chips">
+              <span class="chip">API design</span><span class="chip">Testing</span><span class="chip">Code review</span><span class="chip">Spec compliance</span><span class="chip">Supply-chain security</span>
+              <span class="chip"><img src="assets/img/techwritelogo.png" alt="" loading="lazy" />Technical writing</span>
+              <span class="chip">Mentoring</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <!-- <p>
-          <a aria-label="Call Varad" data-position="top" data-tooltip="Call Varad"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
-              aria-label="Call Varad">+2349043483307</a></a>
-        </p> -->
-        <p>
-          <a aria-label="Email Varad" href="mailto:mordecaiemmanueletukudo@gmail.com<" target="_blank" data-position="top"
-            data-tooltip="Email Varad" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Varad" href="mailto:mordecaiemmanueletukudo@gmail.com<"
-              class="hoverline">mordecaiemmanueletukudo@gmail.com</a></a>
-        </p>
-        <p>
-          <a aria-label="View Varad on GitHub" href="http://github.com/martcpp" target="_blank"
-            data-position="top" data-tooltip="View Varad on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Varad on Github" href="http://github.com/martcpp" class="hoverline"
-              target="_blank">github.com/martcpp</a></a>
-        </p>
-        <p>
-          <a aria-label="View Varad on LinkedIn" href="http://linkedin.com/in/mordecai-etukudo-661b6a191" target="_blank"
-            data-position="top" data-tooltip="View Varad on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Varad on LinkedIn" href="http://linkedin.com/in/mordecai-etukudo-661b6a191"
-              class="hoverline" target="_blank">linkedin.com/in/mordecai-etukudo-661b6a191</a></a>
-        </p>
+    <!-- ===== education ===== -->
+    <section class="block" id="education">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-title"><span class="sec-num">§08</span><h2>Education</h2></div>
+          <span class="sec-tag">// foundations</span>
+        </div>
+
+        <div class="edu-grid reveal">
+          <div class="edu">
+            <p class="deg">B.Eng, Marine Engineering</p>
+            <p class="school"><a href="https://www.uniben.edu/" target="_blank" rel="noopener">University of Benin</a> — Edo, Nigeria</p>
+            <p class="meta">IN PROGRESS · Coursework: Foundations of Python, Engineering Mathematics &amp; Logic</p>
+          </div>
+          <div class="edu">
+            <p class="deg">Diploma, Maritime Studies &amp; ICT</p>
+            <p class="school"><a href="https://eng.uniben.edu/diploma-in-maritime-studies-information-and-communication-technology/" target="_blank" rel="noopener">Center for Maritime Studies &amp; ICT, UNIBEN</a> — Edo, Nigeria</p>
+            <p class="meta">Coursework: Data Structures &amp; Algorithms, Databases, Operating Systems</p>
+          </div>
+        </div>
+
+        <div class="certs reveal">
+          <a class="cert" href="https://www.coursera.org/account/accomplishments/verify/TKVCGMBDNUY4" target="_blank" rel="noopener"><img src="assets/img/c-rust.png" alt="" loading="lazy" />Rust Fundamentals — Duke University</a>
+          <a class="cert" href="https://verify.skilljar.com/c/yeyapyjvefbk" target="_blank" rel="noopener"><img src="assets/img/c-postman.png" alt="" loading="lazy" />API Development — Postman</a>
+          <a class="cert" href="https://www.datacamp.com/statement-of-accomplishment/course/45fd01e7a9c12c6669be87d153aab80af27e61bd?raw=1" target="_blank" rel="noopener"><img src="assets/img/c-datascinec.png" alt="" loading="lazy" />Introduction to Python — DataCamp</a>
+        </div>
       </div>
     </section>
+
+    <!-- ===== contact ===== -->
+    <section class="contact-block" id="contact">
+      <div class="wrap">
+        <div class="contact-inner reveal">
+          <p class="eyebrow">§09 — Contact</p>
+          <h2>Let's build something correct.</h2>
+          <p>Open to collaboration on digital identity, Rust systems, and community work. The fastest way to reach me is email.</p>
+          <a class="contact-email" href="mailto:mordecaiemmanueletukudo@gmail.com">mordecaiemmanueletukudo@gmail.com</a>
+          <div class="social">
+            <a href="https://github.com/martcpp" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/mordecai-etukudo-661b6a191/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://dev.to/martcpp" target="_blank" rel="noopener">dev.to</a>
+            <a href="https://twitter.com/mart_cpp" target="_blank" rel="noopener">X / @mart_cpp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Pythonist","RUST LOVER", "Developer", "Fast Learner"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
+  <footer class="foot">
+    <div class="wrap">
+      <span>© <span id="yr"></span> Mordecai Etukudo</span>
+      <span>Built in <b>Rust</b> spirit · Deployed on GitHub Pages</span>
+    </div>
+  </footer>
 
-
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
